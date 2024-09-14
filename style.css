@@ -1,0 +1,94 @@
+:root{
+    --fb:#3b5999;
+    --ins:#e1306c;
+    --yt:#de463c;
+    --tw:#46c1f6;
+    --github:#333;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    width: 100wv;
+    height: 100vh;
+    background: #dadada;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    display: flex;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    position: relative;
+    margin: 70px;
+}
+.tooltips{
+    position: absolute;
+    background: var(--fb);
+    padding: 0 30px;
+    line-height: 50px;
+    height: 50px;
+    border-radius: 50px;
+    color: white;
+    transition: all 0.5s;
+    opacity: 0;
+    top: 0;
+    pointer-events: none;
+}
+.tooltips::before{
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background: var(--fb);
+    transform: translate(-50% ,50%) rotate(45deg);
+}
+.icon:hover {
+    background: var(--fb);
+}
+.icon:hover .tooltips{
+    top: -70px;
+    opacity: 1; 
+}
+.icon.fb .icon:hover,
+.fb .tooltips::before,
+.fb .tooltips{
+    background: var(--fb);
+}
+
+.icon.github:hover,
+.github .tooltips::before,
+.github .tooltips{
+    background: var(--github);
+}
+
+
+.icon.instagram:hover,
+.instagram .tooltips::before,
+.instagram .tooltips{
+    background: var(--ins);
+}
+
+.icon.twitter:hover,
+.twitter .tooltips::before,
+.twitter .tooltips{
+    background: var(--tw);
+}
+.icon.youtube:hover,
+.youtube .tooltips::before,
+.youtube .tooltips{
+    background: var(--yt);
+}
